@@ -22,7 +22,7 @@ app.add_middleware(
 
 @app.get("/")
 def home():
-    return {"message": "Hello World! Backend Python của bạn đang chạy!"}
+    return {"message": "Hello World!"}
 
 @app.post("/users")
 def create_user(data: UserCreate, db: Session = Depends(get_db)):
