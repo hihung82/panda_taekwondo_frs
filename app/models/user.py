@@ -7,3 +7,5 @@ class User(Base):
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, nullable=False)
     birthday = Column(Date, nullable=False)
+
+    embedding = list[float]
