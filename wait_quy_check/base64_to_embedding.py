@@ -1,10 +1,10 @@
-# app/utils/extract_embedding.py
-# chính là base64_to_embedding.py
+# services/face_service.py
 import base64
 import cv2
 import numpy as np
 from insightface.app import FaceAnalysis
 
+# load model 1 lần
 face_app = FaceAnalysis(
     name="buffalo_l",
     providers=["CPUExecutionProvider"]
@@ -13,6 +13,7 @@ face_app.prepare(ctx_id=0, det_size=(640, 640))
 
 
 def extract_embedding(image_base64: str) -> np.ndarray:
+    # bỏ header "data:image/jpeg;base64,"
     if "," in image_base64:
         image_base64 = image_base64.split(",")[1]
 
@@ -31,4 +32,4 @@ def extract_embedding(image_base64: str) -> np.ndarray:
     if len(faces) > 1:
         raise ValueError("Chỉ cho phép 1 khuôn mặt")
 
-    return faces[0].embedding
+    return faces[0].embedding  # shape (512,)

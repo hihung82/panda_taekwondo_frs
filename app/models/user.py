@@ -1,3 +1,4 @@
+# app/models/user.py
 from sqlalchemy import Column, Integer, String, Date, LargeBinary
 from ..database import Base
 

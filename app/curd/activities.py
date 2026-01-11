@@ -1,8 +1,10 @@
+# app/curd/activities.py
 import os
 import base64
 import uuid
 from app.models.activities import Activities
 from sqlalchemy.orm import Session
+from app.schema.activities import ActivitiesCreate
 
 UPLOAD_DIR = "uploads/activities/"
 
@@ -25,7 +27,7 @@ def save_image_from_base64(image_base64: str) -> str:
     return f"/uploads/activities/{file_name}"
 
 
-def create_activity(db: Session, data):
+def create_activity(db: Session, data: ActivitiesCreate):
     img_url = save_image_from_base64(data.image_base64)
 
     new_activity = Activities(

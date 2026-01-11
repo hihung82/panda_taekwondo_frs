@@ -1,3 +1,4 @@
+# app/router/activities.py
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 

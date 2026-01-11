@@ -1,3 +1,8 @@
+
+python-multipart
+opencv-python
+insightface
+onnxruntime
 # Web framework
 fastapi==0.124.2
 uvicorn[standard]==0.38.0
