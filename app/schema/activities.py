@@ -1,3 +1,5 @@
+# app/schema/activities.py
+
 from pydantic import BaseModel
 
 class ActivitiesCreate(BaseModel):

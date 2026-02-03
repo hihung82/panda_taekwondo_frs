@@ -1,3 +1,4 @@
+# app/utils/comp_embedding.py
 from app.database import SessionLocal
 import numpy as np
 from app.models.user import User

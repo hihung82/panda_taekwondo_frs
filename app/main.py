@@ -7,7 +7,7 @@ from .router.activities import router as activities_router
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 import os
-from .router.students import router as students_router #...
+from app.router.students import router as students_router
 
 Base.metadata.create_all(bind=engine)
 
@@ -21,7 +21,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/")
+@app.post("/student/create")
 def home():
     return {"message": "Hello World!"}
 
